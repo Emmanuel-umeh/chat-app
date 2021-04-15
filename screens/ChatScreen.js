@@ -77,7 +77,7 @@ this.setState({
           placeholder ="Type Message..."
         ></TextInput>
 
-        <Button title ="send">
+        <Button title ="send" onPress = {this.sendMessage}>
 
         </Button>
       </View>
