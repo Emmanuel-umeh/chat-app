@@ -9,6 +9,7 @@ export default class HomeScreen extends Component {
     }
 
     logout = async()=>{
+        console.log("logging out!!")
         await AsyncStorage.clear()
         User.name =  null
         User.phone = null
