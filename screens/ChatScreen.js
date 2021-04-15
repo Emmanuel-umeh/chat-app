@@ -52,7 +52,7 @@ sendMessage = async()=>{
         =
         updates['messages/' + this.state.person.phone + '/' +User.phone +'/' + msgID]
        = 
-       firebase.database().ref().update();
+       firebase.database().ref().update(updates);
        this.setState({
            textMessage : ''
        })
