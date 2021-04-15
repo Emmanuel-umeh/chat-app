@@ -11,6 +11,9 @@ export default class HomeScreen extends Component {
         User.phone = null
 
     }
+
+
+    
     render() {
         return (
             <View style ={Styles.container}>
