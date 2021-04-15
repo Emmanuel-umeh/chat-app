@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
       width : "90%",
       marginBottom : 1,
       borderRadius : 5
+    },
+    btnText : {
+      color : 'darkblue',
+      fontSize : 20
     }
   });
   
