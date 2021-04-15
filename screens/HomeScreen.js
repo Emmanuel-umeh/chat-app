@@ -4,6 +4,7 @@ import { Button, FlatList, Text, TouchableOpacity, View } from 'react-native'
 import User from '../user'
 import Styles from "../constants/styles"
 import { TextInput } from 'react-native-gesture-handler'
+import firebase from "firebase"
 export default class HomeScreen extends Component {
     constructor(props){
         super(props)
