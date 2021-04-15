@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Button, FlatList, Text, TouchableOpacity, View } from 'react-native'
 import User from '../user'
 import Styles from "../constants/styles"
+import { TextInput } from 'react-native-gesture-handler'
 export default class HomeScreen extends Component {
     constructor(props){
         super(props)
@@ -35,6 +36,18 @@ export default class HomeScreen extends Component {
     }
 
 
+    renderItem =({item})=>{
+        return (
+
+            <TouchableOpacity>
+<Text>
+    {item.name}
+</Text>
+            </TouchableOpacity>
+        )
+    }
+
+
 
 
     render() {
@@ -43,7 +56,8 @@ export default class HomeScreen extends Component {
          
          <FlatList
          data = {this.state.users}
-         keyExtractor ={()}
+         keyExtractor ={(item) =>item.phone}
+         renderItem = {this.renderItem}
          />
 
        <Button title = "Logout" onPress = {this.logout}>
