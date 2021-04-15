@@ -21,6 +21,7 @@ export default class HomeScreen extends Component {
         let dbRef = firebase.database().ref("users")
         dbRef.on('child_added', val =>{
             let person = val.val();
+            console.log("new user added")
             person.phone = val.key
             this.setState((prevState) =>{
                 return {
