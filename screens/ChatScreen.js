@@ -9,7 +9,7 @@ export default class ChatScreen extends Component {
         return (
             <View>
                 <Text>
-                    Chat Screen
+                    Chat Screen with {this.props.route.params.item.name}
                 </Text>
                 
             </View>
