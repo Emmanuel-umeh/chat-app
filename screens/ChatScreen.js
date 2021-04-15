@@ -41,6 +41,7 @@ sendMessage = async()=>{
         child(User.phone).child(this.state.person.phone).push()
         // .key
 
+        console.log({msgID})
         let updates = {}
         let message ={
             message : this.state.textMessage,
