@@ -77,7 +77,7 @@ function App(props) {
     <NavigationContainer>
       {/* {authenticated ? ( */}
         <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen}  />
+        {/* <Stack.Screen name="Login" component={LoginScreen}  /> */}
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Chat" component={ChatScreen} />
      
