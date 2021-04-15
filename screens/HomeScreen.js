@@ -17,6 +17,10 @@ export default class HomeScreen extends Component {
 
     }
 
+    componentDidMount(){
+        let dbRef = firebase.database().ref("users")
+    }
+
 
 
 
