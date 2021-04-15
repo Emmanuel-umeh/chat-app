@@ -13,7 +13,7 @@ export default class HomeScreen extends Component {
         await AsyncStorage.clear()
         User.name =  null
         User.phone = null
-        this.props.navigation.navigate("Home")
+        this.props.navigation.navigate("Login")
 
     }
 
