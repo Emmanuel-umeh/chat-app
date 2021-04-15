@@ -44,7 +44,9 @@ export default class HomeScreen extends Component {
                 padding : 10, borderBottomColor : "#ccc", borderWidth : 1
             }}
             onPress ={()=>{
-                this.props.navigation.navigate("Chat")
+                this.props.navigation.navigate("Chat",{
+                    item
+                })
             }}
             >
 <Text>
