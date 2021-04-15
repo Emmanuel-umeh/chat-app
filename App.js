@@ -71,15 +71,16 @@ function App() {
   }, [User.phone]);
   return (
     <NavigationContainer>
-      {authenticated ? (
+      {/* {authenticated ? ( */}
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
-      ) : (
-        <Auth.Navigator>
+      {/* ) : ( */}
+        {/* <Auth.Navigator> */}
           <Auth.Screen name="Login" component={LoginScreen} />
-        </Auth.Navigator>
-      )}
+        {/* </Auth.Navigator> */}
+      {/* )} */}
     </NavigationContainer>
   );
 }
