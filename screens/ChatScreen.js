@@ -37,17 +37,19 @@ export default class ChatScreen extends Component {
 
 sendMessage = async()=>{
     if(this.state.textMessage.length> 0){
+
+      let message ={
+        message : this.state.textMessage,
+        time : firebase.database.ServerValue.TIMESTAMP,
+        from : User.phone
+    }
         let msgID = firebase.database().ref("messages").
-        child(User.phone).child(this.state.person.phone).push()
+        child(User.phone).child(this.state.person.phone).push(message)
         .key
 
         console.log({msgID})
         let updates = {}
-        let message ={
-            message : this.state.textMessage,
-            time : firebase.database.ServerValue.TIMESTAMP,
-            from : User.phone
-        }
+    
 
         updates['messages/'+User.phone+'/'+this.state.person.phone+'/'+msgID]
         =
