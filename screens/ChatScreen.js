@@ -14,6 +14,10 @@ export default class ChatScreen extends Component {
     super(props);
   }
 
+state = {
+    textMessage : ""
+}
+
 
   handleChange = (key)=> (val) =>{
 this.setState({
