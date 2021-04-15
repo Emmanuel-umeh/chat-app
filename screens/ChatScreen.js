@@ -17,8 +17,8 @@ export default class ChatScreen extends Component {
         textMessage : "",
 
         person: {
-            name : this.props.route.params.name,
-            phone : this.props.route.params.phone
+            name : this.props.route.params.item.name,
+            phone : this.props.route.params.item.phone
         }
 
     }
@@ -30,7 +30,7 @@ export default class ChatScreen extends Component {
 
   static navigationOptions = ( props) => {
     return {
-      title: props.route.params.name
+      title: props.route.params.item.name
     };
   };
 
