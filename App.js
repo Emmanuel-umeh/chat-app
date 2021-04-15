@@ -78,7 +78,7 @@ function App() {
         </Stack.Navigator>
       {/* ) : ( */}
         {/* <Auth.Navigator> */}
-          <Auth.Screen name="Login" component={LoginScreen} />
+          {/* <Auth.Screen name="Login" component={LoginScreen} /> */}
         {/* </Auth.Navigator> */}
       {/* )} */}
     </NavigationContainer>
