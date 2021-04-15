@@ -21,7 +21,8 @@ state = {
 sendMessage = async()=>{
     if(this.state.textMessage.length> 0){
         let msgID = firebase.database().ref("messages").
-        child(User.phone).child(this.state.)
+        child(User.phone).child(this.state.person.phone).push()
+        .key
     }
 } 
 
