@@ -48,9 +48,9 @@ sendMessage = async()=>{
             from : User.phone
         }
 
-        updates['messages/' + User.phone + '/' +this.state.person.phone +'/' + msgID]
+        updates['messages/'+User.phone+'/'+this.state.person.phone+'/'+msgID]
         =
-        updates['messages/' + this.state.person.phone + '/' +User.phone +'/' + msgID]
+        updates['messages/'+this.state.person.phone+'/'+User.phone+'/'+msgID]
        = 
        firebase.database().ref().update(updates);
        this.setState({
