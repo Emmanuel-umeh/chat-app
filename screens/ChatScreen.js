@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { SafeAreaView, TextInput, View, Text } from "react-native";
+import { SafeAreaView, TextInput, View, Text, Button } from "react-native";
 
 import styles from "../constants/styles";
 export default class ChatScreen extends Component {
@@ -33,6 +33,10 @@ this.setState({
           value={this.state.textMessage}
           placeholder ="Type Message..."
         ></TextInput>
+
+        <Button title ="send">
+
+        </Button>
       </View>
     );
   }
