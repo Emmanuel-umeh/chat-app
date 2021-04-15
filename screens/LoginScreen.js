@@ -43,7 +43,7 @@ handleChange =key => val =>{
       name : this.state.name
     })
 
-    this.props.navigation.navigate("Home")
+    this.props.navigation.replace("Home")
     }
   }
 
