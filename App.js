@@ -60,7 +60,7 @@ function App(props) {
         // Restoring token failed
         console.log({ e });
         setAuthenticated(false);
-        setLoading(false);
+        setLoading(false); 
       }
 
       // After restoring token, we may need to validate it in production apps
