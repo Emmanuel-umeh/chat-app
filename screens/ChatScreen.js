@@ -1,27 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { SafeAreaView, TextInput, View, Text } from 'react-native'
+import { SafeAreaView, TextInput, View, Text } from "react-native";
 
-import styles from "../constants/styles"
+import styles from "../constants/styles";
 export default class ChatScreen extends Component {
-    
-    static navigationOptions =({navigation})=>{
-        return{
-            title : navigation.getParam("name", null)
-        }
-    }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam("name", null),
+    };
+  };
 
-    constructor(props){
-        super(props)
-    }
-    render() {
-        return (
-            <View>
-                <Text>
-                    Chat Screen with {this.props.route.params.item.name}
-                </Text>
-                
-            </View>
-        )
-    }
+  constructor(props) {
+    super(props);
+  }
+
+
+  handleChange = (key)=> (val) =>{
+this.setState({
+    [key] : val
+})
+  }
+  render() {
+    return (
+      <View>
+        <TextInput
+          onChangeText={this.handleChange("textMessage")}
+          style={styles.input}
+          value={this.state.textMessage}
+          placeholder ="Type Message..."
+        ></TextInput>
+      </View>
+    );
+  }
 }
