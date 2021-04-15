@@ -22,7 +22,11 @@ export default class HomeScreen extends Component {
         dbRef.on('child_added', val =>{
             let person = val.val();
             person.phone = val.key
-            this.setState()
+            this.setState((prevState) =>{
+                return {
+                    users : [...prevState.users, person]
+                }
+            })
         })
     }
 
