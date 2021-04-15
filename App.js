@@ -13,7 +13,7 @@ import firebase from "firebase";
 const Stack = createStackNavigator();
 const Auth = createStackNavigator();
 
-function App(props) {
+function App() {
   var [loading, setLoading] = React.useState(false);
   var [authenticated, setAuthenticated] = React.useState(false);
 
@@ -28,7 +28,7 @@ function App(props) {
         if (userToken) {
           User.phone = userToken;
           setAuthenticated(true);
-          this.props.navigation.replace("Home")
+          props.navigation.replace("Home")
 
           console.log("Authenticated!!!!", userToken);
         } else {
