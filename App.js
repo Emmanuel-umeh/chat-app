@@ -30,12 +30,12 @@ function App(props) {
         if (userToken) {
           User.phone = userToken;
           setAuthenticated(true);
-          props.navigation.replace("Home")
+          // props.navigation.replace("Home")
 
           console.log("Authenticated!!!!", userToken);
         } else {
           setAuthenticated(false);
-          props.navigation.replace("Login")
+          // props.navigation.replace("Login")
           User.phone = null;
           console.log(" NOT Authenticated!!!!");
         }
