@@ -43,7 +43,7 @@ export default class HomeScreen extends Component {
          
          <FlatList
          data = {this.state.users}
-         
+         keyExtractor ={()}
          />
 
        <Button title = "Logout" onPress = {this.logout}>
