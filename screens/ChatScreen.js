@@ -67,7 +67,7 @@ this.setState({
   }
   render() {
 
-    console.log(this.props.route.params)
+    console.log(this.state)
     return (
       <View>
         <TextInput
