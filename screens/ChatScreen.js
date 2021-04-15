@@ -60,6 +60,8 @@ this.setState({
 })
   }
   render() {
+
+    console.log(this.props.navigation.getParam('name'))
     return (
       <View>
         <TextInput
