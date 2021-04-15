@@ -56,7 +56,9 @@ export default class HomeScreen extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
+      <View style={{
+          justifyContent : "center"
+      }}>
         <FlatList
           data={this.state.users}
           keyExtractor={(item) => item.phone}
