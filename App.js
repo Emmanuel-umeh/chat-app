@@ -11,6 +11,7 @@ import User from "./user"
 import firebase from "firebase"
 
 const Stack = createStackNavigator();
+const Auth = createStackNavigator();
 
 function App() {
 
@@ -81,14 +82,20 @@ setLoading(false)
   }, [User.phone]);
   return (
     <NavigationContainer>
+
+{authenticated ? 
       <Stack.Navigator>
-        {authenticated ? 
-                <Stack.Screen name="Home" component={HomeScreen}  /> :
-                
-        <Stack.Screen name="Login" component={LoginScreen} />
-                 }
+
+                <Stack.Screen name="Home" component={HomeScreen}  /> 
 
       </Stack.Navigator>
+
+:
+                <Auth.Navigator>
+<Auth.Screen name="Login" component={LoginScreen} />
+                </Auth.Navigator>
+
+         }
     </NavigationContainer>
   );
 }
