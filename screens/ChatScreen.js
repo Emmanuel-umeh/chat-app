@@ -4,6 +4,7 @@ import { SafeAreaView, TextInput, View, Text, Button } from "react-native";
 
 import styles from "../constants/styles";
 import User from "../user";
+import firebase from "firebase"
 export default class ChatScreen extends Component {
 
   constructor(props) {
