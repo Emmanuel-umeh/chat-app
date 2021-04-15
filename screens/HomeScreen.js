@@ -65,7 +65,9 @@ export default class HomeScreen extends Component {
           renderItem={this.renderItem}
         />
 
-        <Button title="Logout" onPress={this.logout}></Button>
+        <Button title="Logout" style={{
+            marginTop : "90%"
+        }} onPress={this.logout}></Button>
       </View>
     );
   }
