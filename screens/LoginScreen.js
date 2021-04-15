@@ -5,6 +5,7 @@ import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import User from '../user'
 import styles from "../constants/styles"
+import firebase from "firebase"
 export default class LoginScreen extends Component{
 
   constructor(props){
