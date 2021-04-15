@@ -40,7 +40,9 @@ export default class HomeScreen extends Component {
     renderItem =({item})=>{
         return (
 
-            <TouchableOpacity>
+            <TouchableOpacity style ={{
+                padding : 10, borderBottomColor : "#ccc", borderWidth : 1
+            }}>
 <Text>
     {item.name}
 </Text>
