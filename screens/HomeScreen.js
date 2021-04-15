@@ -57,7 +57,8 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={{
-          justifyContent : "center"
+          justifyContent : "center",
+          flex : 1
       }}>
         <FlatList
           data={this.state.users}
@@ -67,7 +68,7 @@ export default class HomeScreen extends Component {
 
 
 <View style={{
-            marginTop : "95%"
+            marginTop : "9%"
         }} > 
    <Button title="Logout" onPress={this.logout}></Button>
 </View>
