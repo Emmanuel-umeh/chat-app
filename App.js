@@ -8,7 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import User from "./user"
-
+import firebase from "firebase"
 
 const Stack = createStackNavigator();
 
@@ -20,6 +20,9 @@ function App() {
   React.useEffect(() => {
 
   
+
+
+
     setLoading(true)
     // Fetch the token from storage then navigate to our appropriate place
     const bootstrapAsync = async () => {
@@ -30,14 +33,33 @@ function App() {
         userToken = await AsyncStorage.getItem('userPhone');
         if(userToken)
         {
-          setAuthenticated(true)
-          User.phone = userToken
 
-          console.log("Authenticated!!!!")
+          User.phone = userToken
+          setAuthenticated(true)
+       
+
+          console.log("Authenticated!!!!", userToken)
         }else{
           setAuthenticated(false)
+
+          User.phone = null
           console.log(" NOT Authenticated!!!!")
         }
+
+          // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyC1qDgXLeA8QQdhzMRiZKaKMMKu9dI4uFQ",
+    authDomain: "chatapp-f49ea.firebaseapp.com",
+    projectId: "chatapp-f49ea",
+    storageBucket: "chatapp-f49ea.appspot.com",
+    messagingSenderId: "854936557844",
+    appId: "1:854936557844:web:4196988cb3326ad1cf8a01",
+    measurementId: "G-B5NQ6D960M"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
      
         setLoading(false)
       } catch (e) {

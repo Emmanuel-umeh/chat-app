@@ -1,15 +1,24 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, { Component } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
-
+import { Button, Text, TouchableOpacity, View } from 'react-native'
+import User from '../user'
+import Styles from "../constants/styles"
 export default class HomeScreen extends Component {
+
+    logout = async()=>{
+        await AsyncStorage.clear()
+        User.name =  null
+        User.phone = null
+
+    }
     render() {
         return (
-            <View>
-                <Text>Home Screen</Text>
+            <View style ={Styles.container}>
+                <Text>Welcome {User.phone}</Text>
 
-                <TouchableOpacity onPress ={this.logout}>
+       <Button title = "Logout">
 
-                </TouchableOpacity>
+       </Button>
             </View>
         )
     }
