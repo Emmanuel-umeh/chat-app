@@ -5,28 +5,34 @@ import { SafeAreaView, TextInput, View, Text, Button } from "react-native";
 import styles from "../constants/styles";
 import User from "../user";
 export default class ChatScreen extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: navigation.getParam("name", null),
-    };
-  };
 
   constructor(props) {
-
+  
     super(props);
+
+    
+    
 
     this.state = {
         textMessage : "",
 
         person: {
-            name : this.props.navigation.getParam('name'),
-            phone : this.props.navigation.getParam('phone')
+            name : this.props.route.params.name,
+            phone : this.props.route.params.phone
         }
 
     }
+
+
     
   }
 
+
+  static navigationOptions = ( props) => {
+    return {
+      title: props.route.params.name
+    };
+  };
 
 sendMessage = async()=>{
     if(this.state.textMessage.length> 0){
