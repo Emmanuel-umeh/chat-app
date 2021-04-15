@@ -59,7 +59,7 @@ function App() {
   };
   // Initialize Firebase
   if (firebase.apps.length === 0) {
-    firebase.initializeApp({});
+    firebase.initializeApp(firebaseConfig);
 }
         setLoading(false)
       } catch (e) {
