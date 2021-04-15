@@ -68,7 +68,7 @@ this.setState({
   }
   render() {
 
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <View>
         <TextInput
