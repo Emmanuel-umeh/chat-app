@@ -58,9 +58,9 @@ function App() {
     measurementId: "G-B5NQ6D960M"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-     
+  if (firebase.apps.length === 0) {
+    firebase.initializeApp({});
+}
         setLoading(false)
       } catch (e) {
         // Restoring token failed
