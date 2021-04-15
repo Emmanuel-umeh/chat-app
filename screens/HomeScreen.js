@@ -12,7 +12,7 @@ export default class HomeScreen extends Component {
         await AsyncStorage.clear()
         User.name =  null
         User.phone = null
-        this.props.navigation.navigate("Home")
+        // this.props.navigation.navigate("Home")
 
     }
 
@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
             <View style ={Styles.container}>
                 <Text>Welcome {User.phone}</Text>
 
-       <Button title = "Logout">
+       <Button title = "Logout" onPress = {this.logout}>
 
        </Button>
             </View>
