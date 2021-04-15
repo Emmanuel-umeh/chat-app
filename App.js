@@ -13,7 +13,9 @@ import firebase from "firebase";
 const Stack = createStackNavigator();
 const Auth = createStackNavigator();
 
-function App() {
+function App(props) {
+
+  console.log({props})
   var [loading, setLoading] = React.useState(false);
   var [authenticated, setAuthenticated] = React.useState(false);
 
