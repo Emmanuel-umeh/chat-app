@@ -16,7 +16,13 @@ export default class ChatScreen extends Component {
     super(props);
 
     this.state = {
-        textMessage : ""
+        textMessage : "",
+
+        person: {
+            name : this.props.navigation.getParam('name'),
+            phone : this.props.navigation.getParam('phone')
+        }
+
     }
     
   }
@@ -34,6 +40,16 @@ sendMessage = async()=>{
             time : firebase.database.ServerValue.TIMESTAMP,
             from : User.phone
         }
+
+        updates['messages/' + User.phone + '/' +this.state.person.phone +'/' + msgID]
+        =
+        updates['messages/' + this.state.person.phone + '/' +User.phone +'/' + msgID]
+       = 
+       firebase.database().ref().update();
+       this.setState({
+           textMessage : ''
+       })
+
     }
 } 
 
