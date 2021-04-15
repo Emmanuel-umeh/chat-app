@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, { Component } from 'react'
-import { Button, Text, TouchableOpacity, View } from 'react-native'
+import { Button, FlatList, Text, TouchableOpacity, View } from 'react-native'
 import User from '../user'
 import Styles from "../constants/styles"
 export default class HomeScreen extends Component {
@@ -17,6 +17,9 @@ export default class HomeScreen extends Component {
 
     }
 
+    state = {
+        users : []
+    }
     componentDidMount(){
         let dbRef = firebase.database().ref("users")
         dbRef.on('child_added', val =>{
@@ -37,7 +40,11 @@ export default class HomeScreen extends Component {
     render() {
         return (
             <View style ={Styles.container}>
-                <Text>Welcome {User.phone}</Text>
+         
+         <FlatList
+         data = {this.state.users}
+         
+         />
 
        <Button title = "Logout" onPress = {this.logout}>
 
