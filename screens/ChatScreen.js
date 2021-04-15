@@ -18,6 +18,13 @@ state = {
     textMessage : ""
 }
 
+sendMessage = async()=>{
+    if(this.state.textMessage.length> 0){
+        let msgID = firebase.database().ref("messages").
+        child(User.phone).child(this.state.)
+    }
+} 
+
 
   handleChange = (key)=> (val) =>{
 this.setState({
