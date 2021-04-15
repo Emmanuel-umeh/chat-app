@@ -38,7 +38,8 @@ handleChange =key => val =>{
       await AsyncStorage.setItem("userPhone", this.state.phone)
     //   console.log("saved the phone number ", this.state.phone)
     User.phone = this.state.phone
-    this.props.navigation.navigate("Home")
+    // this.props.navigation.navigate("Home")
+    firebase.database().ref("users/"+User.phone)
     }
   }
 
