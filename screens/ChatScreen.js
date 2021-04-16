@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { SafeAreaView, TextInput, View, Text, Button, FlatList } from "react-native";
+import { SafeAreaView, TextInput, View, Text, Button, FlatList, Dimensions } from "react-native";
 
 import styles from "../constants/styles";
 import User from "../user";
@@ -35,6 +35,17 @@ export default class ChatScreen extends Component {
       title: props.route.params.item.name
     };
   };
+
+  componentDidMount(){
+    firebase.database().ref('messages').child(User.phone).child(this.state.person.phone)
+    .on('child_added', (val)=>{
+      this.setState((prevState)=>{
+        return{
+          messageList : [...prevState.messageList, val.val()]
+        }
+      })
+    })
+  }
 
 sendMessage = async()=>{
     if(this.state.textMessage.length> 0){
@@ -97,10 +108,16 @@ this.setState({
   render() {
 
     // console.log(this.state)
+    let {height, width} = Dimensions.get("window");
     return (
       <SafeAreaView>
 
         <FlatList
+        style = {{
+          padding : 10,
+          height : height * 0.8
+
+        }}
         
         data = {this.state.messageList}
         renderItem = {this.renderItem}
