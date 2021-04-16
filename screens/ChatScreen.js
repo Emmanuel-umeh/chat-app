@@ -73,7 +73,7 @@ this.setState({
 
     // console.log(this.state)
     return (
-      <View>
+      <SafeAreaView>
         <TextInput
           onChangeText={this.handleChange("textMessage")}
           style={styles.input}
@@ -84,7 +84,7 @@ this.setState({
         <Button title ="send" onPress = {this.sendMessage}>
 
         </Button>
-      </View>
+      </SafeAreaView>
     );
   }
 }
