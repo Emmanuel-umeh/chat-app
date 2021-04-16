@@ -10,6 +10,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import User from "./user";
 import firebase from "firebase";
 import ChatScreen from "./screens/ChatScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const Stack = createStackNavigator();
 const Auth = createStackNavigator();
@@ -80,6 +81,7 @@ function App(props) {
         {/* <Stack.Screen name="Login" component={LoginScreen}  /> */}
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Chat" component={ChatScreen} />
+          <Stack.Screen name="Chat" component={ProfileScreen} />
      
         </Stack.Navigator>
       {/* ) : ( */}
