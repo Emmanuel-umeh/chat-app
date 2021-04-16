@@ -111,7 +111,8 @@ this.setState({
         {item.message}
         </Text>
         <Text style= {{color : '#eee', padding : 3, fontSize : 12 }}>
-{item.time}
+{this.convertTime(item.time
+) }
         </Text>
         
 
