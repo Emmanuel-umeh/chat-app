@@ -16,6 +16,7 @@ export default class ChatScreen extends Component {
 
     this.state = {
         textMessage : "",
+        messageList : [],
 
         person: {
             name : this.props.route.params.item.name,
