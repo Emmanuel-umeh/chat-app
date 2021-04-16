@@ -85,7 +85,7 @@ this.setState({
         <Text style = {{color : "#fff", padding : 2, fontSize : 16}}>
         {item.message}
         </Text>
-        <Text style= {{color : '#eee', padding : 3, }}>
+        <Text style= {{color : '#eee', padding : 3, fontSize : 12 }}>
 {item.time}
         </Text>
         
