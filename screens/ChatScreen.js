@@ -30,6 +30,13 @@ export default class ChatScreen extends Component {
   }
 
 
+  convertTime = (time)=>{
+
+    let d = new Date(time);
+    let c = new Date();
+    let result = 
+  }
+
   static navigationOptions = ( props) => {
     return {
       title: props.route.params.item.name
