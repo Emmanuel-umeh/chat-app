@@ -104,7 +104,7 @@ this.setState({
         
         data = {this.state.messageList}
         renderItem = {this.renderItem}
-        keyExtractor = {{item, index} = index.toString()}
+        keyExtractor = {(item, index) => index.toString()}
         
         />
         <TextInput
