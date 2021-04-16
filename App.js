@@ -81,7 +81,7 @@ function App(props) {
         {/* <Stack.Screen name="Login" component={LoginScreen}  /> */}
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Chat" component={ChatScreen} />
-          <Stack.Screen name="Chat" component={ProfileScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
      
         </Stack.Navigator>
       {/* ) : ( */}
