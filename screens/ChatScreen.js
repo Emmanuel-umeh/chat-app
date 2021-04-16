@@ -82,8 +82,14 @@ this.setState({
         marginBottom : 10
       }}
       >
-        <Text style = {{color : "#fff", padding : 2, fontSize : 16}}></Text>
-{item.message}
+        <Text style = {{color : "#fff", padding : 2, fontSize : 16}}>
+        {item.message}
+        </Text>
+        <Text style= {{color : '#eee', padding : 3, }}>
+{item.time}
+        </Text>
+        
+
       </View>
     )
   }
