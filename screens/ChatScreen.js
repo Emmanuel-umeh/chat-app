@@ -145,9 +145,7 @@ this.setState({
           placeholder ="Type Message..."
         ></TextInput>
 
-        <Button title ="send" style ={{
-          marginBottom : 20
-        }} onPress = {this.sendMessage}>
+        <Button title ="send" onPress = {this.sendMessage}>
 
         </Button>
       </SafeAreaView>
