@@ -34,7 +34,7 @@ export default class ChatScreen extends Component {
 
     let d = new Date(time);
     let c = new Date();
-    let result = 
+    let result = (d.getHours()<10 ? "0" : '') + d.getHours() + ':'
   }
 
   static navigationOptions = ( props) => {
