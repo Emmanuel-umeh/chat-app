@@ -37,7 +37,7 @@ export default class ChatScreen extends Component {
     let result = (d.getHours()<10 ? "0" : '') + d.getHours() + ':'
     result += (d.getMinutes()< 10 ? "0" : '' ) + d.getMinutes();
     if(c.getDay() !== d.getDay()){
-      result = d.getDay() = ' ' + d.getMonth() + ' ' + result;
+      result = d.getDay() + ' ' + d.getMonth() + ' ' + result;
     }
 
     return result
