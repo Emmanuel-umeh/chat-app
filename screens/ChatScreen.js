@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { SafeAreaView, TextInput, View, Text, Button } from "react-native";
+import { SafeAreaView, TextInput, View, Text, Button, FlatList } from "react-native";
 
 import styles from "../constants/styles";
 import User from "../user";
@@ -69,11 +69,37 @@ this.setState({
     [key] : val
 })
   }
+
+  renderItem = ({item})=>{
+    return(
+      <View
+      style = {{
+        flexDirection : "row",
+        width : "100%",
+        alignItems : item.from === User.phone ? "flex-end" : "flex-start",
+        backgroundColor :  item.from === User.phone ? "#00897b" : "#7cb342",
+        borderRadius : 5,
+        marginBottom : 10
+      }}
+      >
+        <Text style = {{color : "#fff", padding : 2, fontSize : 16}}></Text>
+{item.message}
+      </View>
+    )
+  }
   render() {
 
     // console.log(this.state)
     return (
       <SafeAreaView>
+
+        <FlatList
+        
+        data = {this.state.messageList}
+        renderItem = {this.renderItem}
+        keyExtractor = {{item, index} = index.toString()}
+        
+        />
         <TextInput
           onChangeText={this.handleChange("textMessage")}
           style={styles.input}
