@@ -27,11 +27,17 @@ export default class HomeScreen extends Component {
       let person = val.val();
       console.log("new user added");
       person.phone = val.key;
-      this.setState((prevState) => {
-        return {
-          users: [...prevState.users, person],
-        };
-      });
+
+      if(person.phone === User.phone){
+        User.name = person.name
+      }else{
+        this.setState((prevState) => {
+          return {
+            users: [...prevState.users, person],
+          };
+        });
+      }
+    
     });
   }
 
